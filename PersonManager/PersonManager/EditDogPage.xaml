@@ -1,0 +1,58 @@
+﻿<local:DogFramedPage x:Class="PersonManager.EditDogPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PersonManager"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="600"
+      Title="EditDogPage">
+
+    <Grid Background="{StaticResource GradientBackground}" Name="EditDog">
+        <Label Content="Dog name:" Foreground="White" HorizontalAlignment="Left" Margin="83,136,0,0" VerticalAlignment="Top" Width="73"/>
+        <TextBox 
+            x:Name="tbName"
+            HorizontalAlignment="Left" Margin="156,140,0,0" TextWrapping="Wrap" Text="{Binding Name}" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Age:" Foreground="White" HorizontalAlignment="Left" Margin="83,176,0,0" VerticalAlignment="Top" Width="73"/>
+        <TextBox 
+            x:Name="tbAge"
+            Tag="Int"
+            HorizontalAlignment="Left" Margin="198,180,0,0" TextWrapping="Wrap" Text="{Binding Age}" VerticalAlignment="Top" Width="78"/>
+        <Label Content="Breed:" Foreground="White" HorizontalAlignment="Left" Margin="83,221,0,0" VerticalAlignment="Top" Width="73"/>
+        <TextBox 
+            x:Name="tbBreed"
+            HorizontalAlignment="Left" Margin="156,225,0,0" TextWrapping="Wrap" Text="{Binding Breed}" VerticalAlignment="Top" Width="120"/>
+        <Border
+            Width="200"
+            Height="300"
+            x:Name="pictureBorder"
+            BorderBrush="Black" BorderThickness="1" Margin="327,52,73,98">
+            <Image
+                x:Name="picture"
+                Source="{Binding Image}"
+                />
+        </Border>
+        <Button 
+            Background="Transparent"
+            BorderBrush="Transparent"
+            x:Name="btnBack"
+            Click="BtnBack_Click"
+            HorizontalAlignment="Left" Margin="59,52,0,0" VerticalAlignment="Top" Height="28" Width="74">
+            <Image
+                Source="/Assets/back.png"
+                />
+        </Button>
+        <Button x:Name="btnCommit"
+                Content="Commit"
+                Click="BtnCommit_Click"
+                Foreground="White"
+                Background="Black"
+                HorizontalAlignment="Left" Margin="83,296,0,0" VerticalAlignment="Top" Height="34" Width="73"/>
+        <Button x:Name="btnUpload"
+                Content="Upload"
+                Click="BtnUpload_Click"
+                Foreground="White"
+                Background="Orange"
+                HorizontalAlignment="Left" Margin="200,296,0,0" VerticalAlignment="Top" Height="34" Width="74"/>
+    </Grid>
+</local:DogFramedPage>
